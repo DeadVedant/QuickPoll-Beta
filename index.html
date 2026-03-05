@@ -30,48 +30,50 @@
 
     <div class="page-wrapper">
         <div class="container">
+            <div class="container-scroll">
 
-            <!-- Brand -->
-            <div class="brand">
-                <h1>
-                    <span class="brand-light">Quick</span>
-                    <span class="brand-accent">Poll</span>
-                </h1>
-                <p>✨ Create & share polls instantly — no sign-up needed ✨</p>
-            </div>
-
-            <!-- Create Section -->
-            <div id="createSection">
-                <input type="text" id="question" placeholder="📝 Enter your question...">
-                <div id="optionInputs"></div>
-
-                <button data-action="addOption">➕ Add Option</button>
-                <button data-action="createPoll">🚀 Generate Poll</button>
-            </div>
-
-            <!-- Poll Section -->
-            <div id="pollSection">
-                <h3 id="pollQuestion"></h3>
-                <div id="optionsContainer"></div>
-
-                <!-- Share Section -->
-                <div class="share-box">
-                    <div><strong>Share Link:</strong></div>
-                    <div id="shareLink"></div>
-
-                    <button id="copyBtn" data-action="copyLink">📋 Copy Link</button>
-                    <button data-action="shareWhatsApp">💬 WhatsApp</button>
+                <!-- Brand -->
+                <div class="brand">
+                    <h1>
+                        <span class="brand-light">Quick</span>
+                        <span class="brand-accent">Poll</span>
+                    </h1>
+                    <p>✨ Create & share polls instantly — no sign-up needed ✨</p>
                 </div>
 
-                <!-- Voters -->
-                <button data-action="toggleVoters">👥 See Voters</button>
-                <div id="votersList"></div>
+                <!-- Create Section -->
+                <div id="createSection">
+                    <input type="text" id="question" placeholder="📝 Enter your question...">
+                    <div id="optionInputs"></div>
 
-                <!-- Poll Controls -->
-                <button data-action="resetPoll" data-value="reset">🔄 Reset Poll</button>
-                <button data-action="createNewPoll" data-value="new">✨ Create New Poll</button>
+                    <button data-action="addOption">➕ Add Option</button>
+                    <button data-action="createPoll">🚀 Generate Poll</button>
+                </div>
+
+                <!-- Poll Section -->
+                <div id="pollSection">
+                    <h3 id="pollQuestion"></h3>
+                    <div id="optionsContainer"></div>
+
+                    <!-- Share Section -->
+                    <div class="share-box">
+                        <div><strong>Share Link:</strong></div>
+                        <div id="shareLink"></div>
+
+                        <button id="copyBtn" data-action="copyLink">📋 Copy Link</button>
+                        <button data-action="shareWhatsApp">💬 WhatsApp</button>
+                    </div>
+
+                    <!-- Voters -->
+                    <button data-action="toggleVoters">👥 See Voters</button>
+                    <div id="votersList"></div>
+
+                    <!-- Poll Controls -->
+                    <button data-action="resetPoll" data-value="reset">🔄 Reset Poll</button>
+                    <button data-action="createNewPoll" data-value="new">✨ Create New Poll</button>
+                </div>
+
             </div>
-
         </div>
     </div>
 

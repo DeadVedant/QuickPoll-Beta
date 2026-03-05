@@ -3,22 +3,24 @@
    Repulse mode on hover - particles push away from mouse
 ========================= */
 
+const particleCount = window.innerWidth >= 1024 ? 140 : 110;
+
 tsParticles.load("tsparticles", {
     fullScreen: { enable: false },
     particles: {
-        number: { value: 150 },
+        number: { value: particleCount },
         color: { value: "#ffffff" },
         size: { value: { min: 1.5, max: 4.5 } },
         opacity: { value: 0.8 },
-        move: { enable: true, speed: 0.5 },
+        move: { enable: true, speed: 0.4 },
         links: { 
             enable: true, 
             color: "#ffffff", 
             opacity: 0.5, 
-            distance: 120, 
+            distance: 100, 
             width: 1.5 
         },
-        shadow: { enable: true, color: "rgba(255, 255, 255, 0.5)", blur: 8 }
+        shadow: { enable: true, color: "rgba(255, 255, 255, 0.5)", blur: 4 }
     },
     interactivity: {
         events: { onHover: { enable: true, mode: "repulse" } },
