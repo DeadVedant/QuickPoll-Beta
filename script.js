@@ -1,32 +1,41 @@
 /* =========================
    ✨ INTERACTIVE WHITE GLOWY PARTICLE SYSTEM WITH TSPARTICLES
    Repulse mode on hover - particles push away from mouse
+   Disabled on mobile for performance
 ========================= */
 
-const particleCount = window.innerWidth >= 1024 ? 140 : 110;
+// Detect mobile device
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-tsParticles.load("tsparticles", {
-    fullScreen: { enable: false },
-    particles: {
-        number: { value: particleCount },
-        color: { value: "#ffffff" },
-        size: { value: { min: 1.5, max: 4.5 } },
-        opacity: { value: 0.8 },
-        move: { enable: true, speed: 0.4 },
-        links: { 
-            enable: true, 
-            color: "#ffffff", 
-            opacity: 0.5, 
-            distance: 100, 
-            width: 1.5 
+// Only load particles on desktop devices
+if (!isMobile) {
+    const particleCount = window.innerWidth >= 1024 ? 140 : 50;
+    const shadowBlur = window.innerWidth >= 1024 ? 4 : 2;
+    const moveSpeed = window.innerWidth >= 1024 ? 0.4 : 0.25;
+
+    tsParticles.load("tsparticles", {
+        fullScreen: { enable: false },
+        particles: {
+            number: { value: particleCount },
+            color: { value: "#ffffff" },
+            size: { value: { min: 1.5, max: 4.5 } },
+            opacity: { value: 0.8 },
+            move: { enable: true, speed: moveSpeed },
+            links: { 
+                enable: true, 
+                color: "#ffffff", 
+                opacity: 0.3, 
+                distance: 100, 
+                width: 1 
+            },
+            shadow: { enable: true, color: "rgba(255, 255, 255, 0.5)", blur: shadowBlur }
         },
-        shadow: { enable: true, color: "rgba(255, 255, 255, 0.5)", blur: 4 }
-    },
-    interactivity: {
-        events: { onHover: { enable: true, mode: "repulse" } },
-        modes: { repulse: { distance: 120 } }
-    }
-});
+        interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" } },
+            modes: { repulse: { distance: 120 } }
+        }
+    });
+}
 
 /* =========================
    🗳 QUICKPOLL FUNCTIONALITY
