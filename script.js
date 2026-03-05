@@ -1,38 +1,28 @@
 /* =========================
    ✨ INTERACTIVE WHITE GLOWY PARTICLE SYSTEM WITH TSPARTICLES
    Repulse mode on hover - particles push away from mouse
-   Mobile optimized for low-end devices
 ========================= */
-
-// Detect device capability
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-const particleCount = isMobile ? 120 : 150;
-const enableParticleLinks = !isMobile;
-const linkOpacity = isMobile ? 0 : 0.5;
-const particleOpacity = isMobile ? 0.6 : 0.8;
-const particleSizeMin = isMobile ? 0.8 : 1.5;
-const particleSizeMax = isMobile ? 3 : 4.5;
 
 tsParticles.load("tsparticles", {
     fullScreen: { enable: false },
     particles: {
-        number: { value: particleCount },
+        number: { value: 150 },
         color: { value: "#ffffff" },
-        size: { value: { min: particleSizeMin, max: particleSizeMax } },
-        opacity: { value: particleOpacity },
-        move: { enable: true, speed: isMobile ? 0.3 : 0.5 },
+        size: { value: { min: 1.5, max: 4.5 } },
+        opacity: { value: 0.8 },
+        move: { enable: true, speed: 0.5 },
         links: { 
-            enable: enableParticleLinks, 
+            enable: true, 
             color: "#ffffff", 
-            opacity: linkOpacity, 
+            opacity: 0.5, 
             distance: 120, 
             width: 1.5 
         },
-        shadow: { enable: !isMobile, color: "rgba(255, 255, 255, 0.5)", blur: 8 }
+        shadow: { enable: true, color: "rgba(255, 255, 255, 0.5)", blur: 8 }
     },
     interactivity: {
         events: { onHover: { enable: true, mode: "repulse" } },
-        modes: { repulse: { distance: isMobile ? 80 : 120 } }
+        modes: { repulse: { distance: 120 } }
     }
 });
 
